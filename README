@@ -1,0 +1,27 @@
+##WP Stat
+
+A Google Chrome Extention showing daily hits on owned Wordpress.com Site using HTTPRequest to service at https://stats.wordpress.com/csv.php?api_key= ecc...
+Need complete http site address (e.g. http://myblog.wordpress.com) and Akismet API key (e.g. 89323243s85b).
+
+
+
+##Changelog
+
+
+ver. 1.5.0
+- add popup;
+- autorun Option when install;
+- instant check saving setting;
+- instant check at the start.
+
+
+ver. 1.1.0
+- add Option Popup;
+- add blink notification;
+- check delay 60s.
+
+
+ver. 1.0.0
+- extention complete.
+
+
