@@ -3,7 +3,7 @@ var url;
 var text = 'Wait!';
 var start = false;
 var time = 60000;
-//var first = false;
+var first = false;
 var www1 = 'https://stats.wordpress.com/csv.php?api_key=';
 var www3 = '&blog_uri='
 var www5 = '&table=views&days=1&format=xml';
@@ -12,7 +12,7 @@ var www5 = '&table=views&days=1&format=xml';
 //evento all'installazione dell'applicazione (richiamo option.html)
 chrome.runtime.onInstalled.addListener(function() {
   chrome.tabs.create({url: "option.html"});
-  //first = true;
+  first = true;
 });
 
 //inizializzazione etichetta estensione

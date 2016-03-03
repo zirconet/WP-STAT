@@ -19,7 +19,7 @@
   <form>
   <h3>Please insert properly your setting:</h3>
   Insert Wordpress.com  Site:
-  <input size="30" id="www" value="https://"></input>
+  <input size="30" id="www"></input>
   </br>
   Insert Akismet secret code:
   <input size="10" id="key"></input>
