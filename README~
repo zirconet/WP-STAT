@@ -1,8 +1,7 @@
-# WP Stat (available in Chrome Web Store)
+# WP Stat
 
-A Google Chrome Extention showing in toolbar daily hits on owned Wordpress.com Site using HTTPRequest to service at https://stats.wordpress.com/csv.php?api_key= ecc...
+A Google Chrome Extention showing daily hits on owned Wordpress.com Site using HTTPRequest to service at https://stats.wordpress.com/csv.php?api_key= ecc...
 Need complete http site address (e.g. http://myblog.wordpress.com) and Akismet API key (e.g. 89323243s85b).
-
 
 
 
