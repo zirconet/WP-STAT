@@ -1,5 +1,6 @@
 var url;
 var text = '';
+var labelClr = '#4285F4';
 
 function sendRequest(url, callback) {
     
@@ -40,7 +41,7 @@ function restore_options() {
         sendRequest(url, function (response) {  	
 	text = response;
     	chrome.browserAction.setBadgeText({text});
-	chrome.browserAction.setBadgeBackgroundColor({ color: "#FF0000"});
+	chrome.browserAction.setBadgeBackgroundColor({ color: labelClr});
     });
 }
 )};	

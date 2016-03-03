@@ -3,6 +3,7 @@ var url;
 var text = 'Wait!';
 var start = false;
 var time = 60000;
+var labelClr = '#4285F4';
 //var first = false;
 var www1 = 'https://stats.wordpress.com/csv.php?api_key=';
 var www3 = '&blog_uri='
@@ -17,7 +18,7 @@ chrome.runtime.onInstalled.addListener(function() {
 
 //inizializzazione etichetta estensione
 chrome.browserAction.setBadgeText({text});
-chrome.browserAction.setBadgeBackgroundColor({ color: "#FF0000"});
+chrome.browserAction.setBadgeBackgroundColor({ color: labelClr});
 
 //richiamo funzione all'avvio dell'estensione
 on_start();
@@ -32,7 +33,7 @@ var readyStateCheckInterval = setInterval(function() {
 		{
 		start = true;
     		chrome.browserAction.setBadgeText({text});
-        	chrome.browserAction.setBadgeBackgroundColor({ color: "#FF0000"});
+        	chrome.browserAction.setBadgeBackgroundColor({ color: labelClr});
 		};
 	}
 )}, time); 
@@ -73,7 +74,7 @@ function restore_options() {
 		{
 		start = true;
     		chrome.browserAction.setBadgeText({text});
-        	chrome.browserAction.setBadgeBackgroundColor({ color: "#FF0000"});
+        	chrome.browserAction.setBadgeBackgroundColor({ color: labelClr});
 		};
 });	
 }
@@ -97,7 +98,7 @@ function on_start() {
         sendRequest(url, function (response) {  	
 	text = response;
     	chrome.browserAction.setBadgeText({text});
-	chrome.browserAction.setBadgeBackgroundColor({ color: "#FF0000"});
+	chrome.browserAction.setBadgeBackgroundColor({ color: labelClr});
     });
 }
 )};

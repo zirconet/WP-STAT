@@ -3,6 +3,7 @@ var www1 = 'https://stats.wordpress.com/csv.php?api_key=';
 var www3 = '&blog_uri='
 var www5 = '&table=views&days=1&format=xml';
 var text = ''; //inizializzazione label icona
+var labelClr = '#4285F4';
 
 
 //funzione salvataggio opzioni con avvio lettura contatore
@@ -86,7 +87,7 @@ function restore_options() {
 	text = response;
 	//cambio tag icona
     	chrome.browserAction.setBadgeText({text});
-	chrome.browserAction.setBadgeBackgroundColor({ color: "#FF0000"});
+	chrome.browserAction.setBadgeBackgroundColor({ color: labelClr});
 
 	//chiusura pagina opzioni dopo aver visualizzato contatore
 	var alert = document.getElementById('alert');

@@ -3,6 +3,7 @@ var www1 = 'https://stats.wordpress.com/csv.php?api_key=';
 var www3 = '&blog_uri='
 var www5 = '&table=views&days=1&format=xml';
 var text = '';
+var labelClr = '#4285F4';
 
 
 
@@ -59,7 +60,7 @@ function restore_options() {
         sendRequest(url, function (response) {  	
 	text = response;
     	chrome.browserAction.setBadgeText({text});
-	chrome.browserAction.setBadgeBackgroundColor({ color: "#FF0000"});
+	chrome.browserAction.setBadgeBackgroundColor({ color: labelClr});
     });
 }
 )}
