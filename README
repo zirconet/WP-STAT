@@ -1,12 +1,15 @@
-# WP Stat (available in Chrome Web Store)
+# WP Stats (available in Chrome Web Store)
+# Wordpress Stats
 
 A Google Chrome Extention showing in toolbar daily hits on owned Wordpress.com Site using HTTPRequest to service at https://stats.wordpress.com/csv.php?api_key= ecc...
 Need complete http site address (e.g. http://myblog.wordpress.com) and Akismet API key (e.g. 89323243s85b).
 
 
-
-
 ##Changelog##
+
+ver. 1.5.7
+- now it is possible set label color (red, blue, purple, green, yellow, orange).
+
 
 ver. 1.5.6
 - change label color in blue;

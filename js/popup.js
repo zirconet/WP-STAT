@@ -28,10 +28,12 @@ function restore_options() {
    
     chrome.storage.sync.get({
     favoriteWww: '',
-    favoriteKey: ''
+    favoriteKey: '',
+    favoriteClr: ''
     }, function(items) {
     	www4 = items.favoriteWww;
     	www2 = items.favoriteKey;
+        labelClr = items.favoriteClr;
 	var www1 = 'https://stats.wordpress.com/csv.php?api_key=';
 	var www3 = '&blog_uri='
 	var www5 = '&table=views&days=1&format=xml';

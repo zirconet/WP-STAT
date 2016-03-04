@@ -10,9 +10,11 @@ var labelClr = '#4285F4';
 function save_options() {
   var www = document.getElementById('www').value;
   var key = document.getElementById('key').value;
+  var clr = document.getElementById('clr').value;
   chrome.storage.sync.set({
     favoriteWww: www,
-    favoriteKey: key
+    favoriteKey: key,
+    favoriteClr: clr
   }, function() {
     var status = document.getElementById('status');
     status.textContent = 'Options saved.';
@@ -52,18 +54,17 @@ function sendRequest(url, callback) {
 
 function restore_options() {
     
-    //cambio tag icona 
     text = 'wait';
     chrome.browserAction.setBadgeText({text});
-
-    
-    //lettura dati e creazione url
+   
     chrome.storage.sync.get({
     favoriteWww: '',
-    favoriteKey: ''
+    favoriteKey: '',
+    favoriteClr: ''
     }, function(items) {
     	www4 = items.favoriteWww;
     	www2 = items.favoriteKey;
+        labelClr = items.favoriteClr;
 
 	if (www4 == undefined || www4 == null || www4.length <= 0){
     		var alert = document.getElementById('alert');
@@ -79,6 +80,15 @@ function restore_options() {
 			alert.textContent = '';
 			}, 750);
 		}
+
+	if (labelClr == undefined || labelClr == null || labelClr.length <= 0){
+    		var alert = document.getElementById('alert');
+    		alert.textContent = 'Data incorrect, please re-check!';
+		setTimeout(function() {
+			alert.textContent = '';
+			}, 750);
+		}
+
 	url = www1 + www2 + www3 + www4 + www5;
 	chrome.browserAction.setBadgeBackgroundColor({ color: "#00FF00"});	
 

@@ -56,12 +56,14 @@ function sendRequest(url, callback) {
 
 //aggiornamento contatore
 function restore_options() {
-    chrome.storage.sync.get({
+chrome.storage.sync.get({
     favoriteWww: '',
-    favoriteKey: ''
-  }, function(items) {
+    favoriteKey: '',
+    favoriteClr: ''
+    }, function(items) {
     	www4 = items.favoriteWww;
     	www2 = items.favoriteKey;
+        labelClr = items.favoriteClr;
 	url = www1 + www2 + www3 + www4 + www5;
 	if (start == true) {	
 			chrome.browserAction.setBadgeBackgroundColor({ color: "#00FF00"});
@@ -85,13 +87,15 @@ function on_start() {
     
     text = 'wait';
     chrome.browserAction.setBadgeText({text});
-    
+   
     chrome.storage.sync.get({
     favoriteWww: '',
-    favoriteKey: ''
+    favoriteKey: '',
+    favoriteClr: ''
     }, function(items) {
     	www4 = items.favoriteWww;
     	www2 = items.favoriteKey;
+        labelClr = items.favoriteClr;
 	url = www1 + www2 + www3 + www4 + www5;
 	chrome.browserAction.setBadgeBackgroundColor({ color: "#00FF00"});
 	

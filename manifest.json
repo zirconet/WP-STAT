@@ -1,9 +1,9 @@
 { 
-  "name": "WP Stats",
+  "name": "Wordpress Stats",
   "short_name": "WP Stats",
   "author": "Zirconet",
   "description": "Show Wordpress hits",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "manifest_version": 2,
 
   "options_ui": {
