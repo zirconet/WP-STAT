@@ -2,19 +2,27 @@
 var url;
 var text = 'Wait!';
 var start = false;
-var time = 60000;
+var time = 180000;
 var labelClr = '#4285F4';
 //var first = false;
 var www1 = 'https://stats.wordpress.com/csv.php?api_key=';
 var www3 = '&blog_uri='
-var www5 = '&table=views&days=1&format=xml';
+var www5 = '&table=views&';
+var tempo = 'days=1';
+var www6 = '&format=xml';
 
 
 //evento all'installazione dell'applicazione (richiamo option.html)
-chrome.runtime.onInstalled.addListener(function() {
-  chrome.tabs.create({url: "option.html"});
-  //first = true;
+
+chrome.runtime.onInstalled.addListener(function(details){
+    if(details.reason == "install"){
+        chrome.tabs.create({url: "option.html"});
+    }else if(details.reason == "update"){
+        chrome.tabs.create({url: "update.html"});
+    }
 });
+
+
 
 //inizializzazione etichetta estensione
 chrome.browserAction.setBadgeText({text});
@@ -59,12 +67,14 @@ function restore_options() {
 chrome.storage.sync.get({
     favoriteWww: '',
     favoriteKey: '',
+    favoriteTmp: '',
     favoriteClr: ''
     }, function(items) {
     	www4 = items.favoriteWww;
     	www2 = items.favoriteKey;
         labelClr = items.favoriteClr;
-	url = www1 + www2 + www3 + www4 + www5;
+	tempo = items.favoriteTmp;
+	url = www1 + www2 + www3 + www4 + www5 + tempo + www6;
 	if (start == true) {	
 			chrome.browserAction.setBadgeBackgroundColor({ color: "#00FF00"});
 			   };
@@ -91,12 +101,14 @@ function on_start() {
     chrome.storage.sync.get({
     favoriteWww: '',
     favoriteKey: '',
+    favoriteTmp: '',
     favoriteClr: ''
     }, function(items) {
     	www4 = items.favoriteWww;
     	www2 = items.favoriteKey;
         labelClr = items.favoriteClr;
-	url = www1 + www2 + www3 + www4 + www5;
+	tempo = items.favoriteTmp;
+	url = www1 + www2 + www3 + www4 + www5 + tempo + www6;
 	chrome.browserAction.setBadgeBackgroundColor({ color: "#00FF00"});
 	
         sendRequest(url, function (response) {  	

@@ -1,6 +1,7 @@
 var url;
 var text = '';
 var labelClr = '#4285F4';
+var tempo = 'days=1';
 
 function sendRequest(url, callback) {
     
@@ -29,15 +30,18 @@ function restore_options() {
     chrome.storage.sync.get({
     favoriteWww: '',
     favoriteKey: '',
+    favoriteTmp: '',	
     favoriteClr: ''
     }, function(items) {
     	www4 = items.favoriteWww;
     	www2 = items.favoriteKey;
         labelClr = items.favoriteClr;
+	tempo = items.favoriteTmp;
 	var www1 = 'https://stats.wordpress.com/csv.php?api_key=';
-	var www3 = '&blog_uri='
-	var www5 = '&table=views&days=1&format=xml';
-	url = www1 + www2 + www3 + www4 + www5;
+	var www3 = '&blog_uri=';
+	var www5 = '&table=views&';
+	var www6 = '&format=xml';
+	url = www1 + www2 + www3 + www4 + www5 + tempo + www6;
 	chrome.browserAction.setBadgeBackgroundColor({ color: "#00FF00"});
 	
         sendRequest(url, function (response) {  	

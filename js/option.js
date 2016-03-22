@@ -1,9 +1,17 @@
 var url; //inizializzazione variabile indirizzo statistiche
 var www1 = 'https://stats.wordpress.com/csv.php?api_key=';
-var www3 = '&blog_uri='
-var www5 = '&table=views&days=1&format=xml';
+var www3 = '&blog_uri=';
+var www5 = '&table=views&';
+var tempo = 'days=1';
+var www6 = '&format=xml';
 var text = ''; //inizializzazione label icona
 var labelClr = '#4285F4';
+
+
+//calcolo versione estensione
+var version = document.getElementById('version');
+var verchrome = chrome.app.getDetails().version;
+version.textContent = 'ver. ' + verchrome;
 
 
 //funzione salvataggio opzioni con avvio lettura contatore
@@ -11,9 +19,11 @@ function save_options() {
   var www = document.getElementById('www').value;
   var key = document.getElementById('key').value;
   var clr = document.getElementById('clr').value;
+  var tmp = document.getElementById('tmp').value;
   chrome.storage.sync.set({
     favoriteWww: www,
     favoriteKey: key,
+    favoriteTmp: tmp,
     favoriteClr: clr
   }, function() {
     var status = document.getElementById('status');
@@ -60,11 +70,13 @@ function restore_options() {
     chrome.storage.sync.get({
     favoriteWww: '',
     favoriteKey: '',
+    favoriteTmp: '',
     favoriteClr: ''
     }, function(items) {
     	www4 = items.favoriteWww;
     	www2 = items.favoriteKey;
         labelClr = items.favoriteClr;
+	tempo = items.favoriteTmp;
 
 	if (www4 == undefined || www4 == null || www4.length <= 0){
     		var alert = document.getElementById('alert');
@@ -81,6 +93,14 @@ function restore_options() {
 			}, 750);
 		}
 
+	if (tempo == undefined || tempo == null || tempo.length <= 0){
+    		var alert = document.getElementById('alert');
+    		alert.textContent = 'Data incorrect, please re-check!';
+		setTimeout(function() {
+			alert.textContent = '';
+			}, 750);
+		}
+
 	if (labelClr == undefined || labelClr == null || labelClr.length <= 0){
     		var alert = document.getElementById('alert');
     		alert.textContent = 'Data incorrect, please re-check!';
@@ -89,7 +109,7 @@ function restore_options() {
 			}, 750);
 		}
 
-	url = www1 + www2 + www3 + www4 + www5;
+	url = www1 + www2 + www3 + www4 + www5 + tempo + www6;
 	chrome.browserAction.setBadgeBackgroundColor({ color: "#00FF00"});	
 
         //invio richiesta lettura contatore

@@ -1,19 +1,26 @@
 # WP Stats (available in Chrome Web Store)
 # Wordpress Stats
 
-A Google Chrome Extention showing in toolbar daily hits on owned Wordpress.com Site using HTTPRequest to service at https://stats.wordpress.com/csv.php?api_key= ecc...
+A Google Chrome Extention showing in toolbar hits on owned Wordpress.com Site using HTTPRequest to service at https://stats.wordpress.com/csv.php?api_key= ecc...
 Need complete http site address (e.g. http://myblog.wordpress.com) and Akismet API key (e.g. 89323243s85b).
 
 
 ##Changelog##
 
+ver. 1.5.8
+- you can now set in Option total counter range (daily, weekly, monthly);
+- arranged new option.html page;
+- implemented detection Chrome extension first run / update;
+- created update.html page;
+- check delay now is every 180 sec.
+
 ver. 1.5.7
-- now it is possible set label color (red, blue, purple, green, yellow, orange).
+- now it is possible set in Option label color (red, blue, purple, green, yellow, orange).
 
 
 ver. 1.5.6
-- change label color in blue;
-- change WP Stat url web site.
+- changed label color in blue;
+- changed WP Stat url web site.
 
 
 ver. 1.5.0
