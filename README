@@ -1,11 +1,17 @@
 # WP Stats (available in Chrome Web Store)
 # Wordpress Stats
 
-A Google Chrome Extention showing in toolbar hits on owned Wordpress.com Site using HTTPRequest to service at https://stats.wordpress.com/csv.php?api_key= ecc...
+Check easily who visit your Wordpress.com page!
+
+A Google Chrome Extention showing in toolbar how many visitors on owned Wordpress.com site using HTTPRequest to service at https://stats.wordpress.com/csv.php?api_key= ecc...
 Need complete http site address (e.g. http://myblog.wordpress.com) and Akismet API key (e.g. 89323243s85b).
 
 
 ##Changelog##
+
+ver. 1.5.9
+- implemented MORE STATISTIC popup showing current best posts and their visitors;</p>
+- new background image.
 
 ver. 1.5.8
 - you can now set in Option total counter range (daily, weekly, monthly);

@@ -52,8 +52,6 @@ function restore_options() {
 }
 )};	
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
   restore_options();
 });
