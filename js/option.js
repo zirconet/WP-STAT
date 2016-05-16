@@ -13,6 +13,10 @@ var version = document.getElementById('version');
 var verchrome = chrome.app.getDetails().version;
 version.textContent = 'ver. ' + verchrome;
 
+function close_options() {
+window.close();
+}
+
 
 //funzione salvataggio opzioni con avvio lettura contatore
 function save_options() {
@@ -136,4 +140,5 @@ function restore_options() {
 //premendo pulsante 'save' si avvia procedura salvataggio opzioni...
 document.getElementById('save').addEventListener('click',
     save_options);
+
 

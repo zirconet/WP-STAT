@@ -12,7 +12,9 @@ function sendRequest(url, callback) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
 		var xmlDoc = xhr.responseXML;
- 		
+
+		var x = '';
+
 		var riga0 = document.getElementById('riga0');	
         	riga0.textContent = '- ' + xmlDoc.getElementsByTagName("post")[0].getAttribute('title');
 		var valore0 = document.getElementById('valore0');	
@@ -39,7 +41,7 @@ function sendRequest(url, callback) {
         	valore4.textContent = xmlDoc.getElementsByTagName("post")[4].childNodes[0].nodeValue + ' visitors';
 
             	callback(x);
-        }
+        };
     };
     xhr.open("GET", url, true);
     xhr.send();

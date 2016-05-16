@@ -7,6 +7,10 @@ var www5 = '&table=views&';
 var tempo = 'days=1';
 var www6 = '&format=xml';
 
+function close_options() {
+window.close();
+}
+
 
 function save_options() {
   var www = document.getElementById('www').value;
@@ -93,3 +97,5 @@ function reload_options() {
 document.addEventListener('DOMContentLoaded', reload_options);
 document.getElementById('save').addEventListener('click',
     save_options);
+document.getElementById('close').addEventListener('click',
+    close_options);

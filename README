@@ -9,6 +9,10 @@ Need complete http site address (e.g. http://myblog.wordpress.com) and Akismet A
 
 ##Changelog##
 
+ver. 1.6.1
+- renewed STATS POPUP (now accessible simply clicking WP STATS icon);
+- fixed all reported bugs.
+
 ver. 1.5.9
 - implemented MORE STATISTIC popup showing current best posts and their visitors;</p>
 - new background image.
