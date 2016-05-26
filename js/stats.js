@@ -18,27 +18,27 @@ function sendRequest(url, callback) {
 		var riga0 = document.getElementById('riga0');	
         	riga0.textContent = '- ' + xmlDoc.getElementsByTagName("post")[0].getAttribute('title');
 		var valore0 = document.getElementById('valore0');	
-        	valore0.textContent = xmlDoc.getElementsByTagName("post")[0].childNodes[0].nodeValue + ' visitors';
+        	valore0.textContent = xmlDoc.getElementsByTagName("post")[0].childNodes[0].nodeValue + ' views';
 
 		var riga1 = document.getElementById('riga1');	
         	riga1.textContent = '- ' +  xmlDoc.getElementsByTagName("post")[1].getAttribute('title')
 		var valore1 = document.getElementById('valore1');	
-        	valore1.textContent = xmlDoc.getElementsByTagName("post")[1].childNodes[0].nodeValue + ' visitors';
+        	valore1.textContent = xmlDoc.getElementsByTagName("post")[1].childNodes[0].nodeValue + ' views';
 
 		var riga2 = document.getElementById('riga2');	
         	riga2.textContent = '- ' +  xmlDoc.getElementsByTagName("post")[2].getAttribute('title')
 		var valore2 = document.getElementById('valore2');	
-        	valore2.textContent = xmlDoc.getElementsByTagName("post")[2].childNodes[0].nodeValue + ' visitors';
+        	valore2.textContent = xmlDoc.getElementsByTagName("post")[2].childNodes[0].nodeValue + ' views';
 
 		var riga3 = document.getElementById('riga3');	
         	riga3.textContent = '- ' +  xmlDoc.getElementsByTagName("post")[3].getAttribute('title')
 		var valore3 = document.getElementById('valore3');	
-        	valore3.textContent = xmlDoc.getElementsByTagName("post")[3].childNodes[0].nodeValue + ' visitors';
+        	valore3.textContent = xmlDoc.getElementsByTagName("post")[3].childNodes[0].nodeValue + ' views';
 
 		var riga4 = document.getElementById('riga4');	
         	riga4.textContent = '- ' +  xmlDoc.getElementsByTagName("post")[4].getAttribute('title')
 		var valore4 = document.getElementById('valore4');	
-        	valore4.textContent = xmlDoc.getElementsByTagName("post")[4].childNodes[0].nodeValue + ' visitors';
+        	valore4.textContent = xmlDoc.getElementsByTagName("post")[4].childNodes[0].nodeValue + ' views';
 
             	callback(x);
         };
@@ -61,12 +61,15 @@ function on_start() {
 
 	var res = www4.replace("https://", "");
 	var rigawww = document.getElementById('rigawww');
-    	rigawww.textContent = 'checking...: ' + res; 
+    	rigawww.textContent = 'checking... :  ' + res; 
+
+	
+	var rigaimg = document.getElementById('rigaimg');
+	rigaimg.src = 'img/wp_green.png';
 
 	var link = 'https://wordpress.com/stats/insights/' + res;
-	var rigalink = document.getElementById('rigalink');
-	rigalink.textContent = 'Go to WORDPRESS.COM stats';
-	rigalink.setAttribute("href", link);
+	var rigalink = document.getElementById('rigalink').href=link;
+
 
 	url = www1 + www2 + www3 + www4 + www5 + tempo + www6;
 	

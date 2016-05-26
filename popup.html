@@ -3,28 +3,44 @@
   <head>
     <title>WP STATS</title>
     <style>
-      body {
+      	body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 60%;
-      }
-      #status {
+      	}
+     	 #status {
         /* avoid an excessively wide status text */
         white-space: pre;
         text-overflow: ellipsis;
         overflow: hidden;
         max-width: 1000px;
-      }
+      	}
+	img:hover {
+  	white-space: nowrap;
+  	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;
+ 	 border-radius: 5px;
+  	-moz-box-shadow: 0px 0px 4px #333;
+  	-webkit-box-shadow: 0px 0px 4px #333;
+  	box-shadow: 0px 0px 4px #333;
+  	background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eeeeee),color-stop(1, #cccccc));
+  	background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+  	background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  	background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+  	background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+	}
+	img[alt]{font-weight:bold;}
     </style>
     <script src="js/stats.js"></script>
   </head>
   <body background="img/bgimage.gif">
-<div style="text-align: center;"><span style="color: #000000;"><a href="http://goo.gl/SaSGIw" target="_blank"><img class="wp-image-21898 size-full alignnone" style="margin-right: 175px; margin-left: 175px; border: 0px solid #000000;" src="img/icon128.png" alt="icon128" width="48" height="48" /></a></span> <b style="font-size: 155%">WP STATS </b><em style="font-size: 75%"></em></div>
+<div style="text-align: center;"><span style="color: #000000;"><a href="http://goo.gl/SaSGIw" target="_blank"><img class="wp-image-21898 size-full alignnone" style="margin-right: 175px; margin-left: 175px; border: 0px solid #000000;" src="img/icon128.png" alt="icon128" width="48" height="48" /></a></span> <b style="font-size: 200%; color: white;text-shadow: 2px 2px 4px #000000;">WP STATS </b><em style="font-size: 75%"></em></div>
 <p style="font-size: 125%"><b>Stats by post:</b> <em style="font-size: 75%">(today's top five)</em></p>
 <div style="font-size: 80%;text-align: left;font-weight: bold" id="rigawww"></div>
 <hr>
-<hr>
+<hr> 
 <div style="font-size: 100%;text-align: left;" id="riga0"></div>
-<div style="font-size: 90%;text-align: left;font-weight: bold" id="valore0">calculing...</div>
+<div style="font-size: 90%;text-align: left;font-weight: bold" id="valore0"></div>
 <hr>
 <div style="font-size: 100%;text-align: left;" id="riga1"></div>
 <div style="font-size: 90%;text-align: left;font-weight: bold" id="valore1"></div>
@@ -39,13 +55,13 @@
 <div style="font-size: 90%;text-align: left;font-weight: bold" id="valore4"></div>
 <hr />
 <hr />
-<a style="color: green;font-size: 80%" id="rigalink" target="_blank"></a> 
-<a style="color: white;">_______________</a>
-<a href="options.html"><img src="img/settings_green.png" width="24" height="24" alt='options' /></a>
-<a style="color: white;">___________________</a>
-<a style="color: green;font-size: 80%" href="credits.html">Privacy & Credits</a>
-<hr />
-<p style="color: darkgrey;font-weight: bold;text-align: center;font-size: 80%" >---*- (click over the window to close this popup) -*---</p>
+<p style="text-align: center;">
+<a id="rigalink" target="_blank"> <img id="rigaimg" width="24" height="24" title="go to Wordpress.com stats" alt="Wordpress stats" /></a> 
+<a style="color: white;">_________</a>
+<a href="options.html"><img src="img/settings_green.png" width="24" height="24" title="Options/Settings" alt='options' /></a>
+<a style="color: white;">_________</a>
+<a href="credits.html"><img src="img/zirco_green.png" width="24" height="24" title="Privacy & Credits" alt='credits' /></a>
+</p>
   </body>
 </html>
 

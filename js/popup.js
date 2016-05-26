@@ -15,7 +15,7 @@ function sendRequest(url, callback) {
     };
     xhr.open("GET", url, true);
     xhr.send();
-}
+};
 
 
 function restore_options() {

@@ -3,7 +3,7 @@
   "short_name": "WP Stats",
   "author": "Zirconet",
   "description": "Show Wordpress hits",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "manifest_version": 2,
 
   "options_ui": {
