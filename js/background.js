@@ -4,12 +4,12 @@ var text = 'Wait!';
 var start = false;
 var time = 180000;
 var labelClr = '#4285F4';
-//var first = false;
 var www1 = 'https://stats.wordpress.com/csv.php?api_key=';
 var www3 = '&blog_uri='
 var www5 = '&table=views&';
 var tempo = 'days=1';
 var www6 = '&format=xml';
+var titolo = 'WP STATS counted ';
 
 
 //evento all'installazione dell'applicazione (richiamo option.html)
@@ -28,6 +28,7 @@ chrome.runtime.onInstalled.addListener(function(details){
 chrome.browserAction.setBadgeText({text});
 chrome.browserAction.setBadgeBackgroundColor({ color: labelClr});
 
+
 //richiamo funzione all'avvio dell'estensione
 on_start();
 
@@ -42,6 +43,7 @@ var readyStateCheckInterval = setInterval(function() {
 		start = true;
     		chrome.browserAction.setBadgeText({text});
         	chrome.browserAction.setBadgeBackgroundColor({ color: labelClr});
+		chrome.browserAction.setTitle({title : titolo+text+" views"});  
 		};
 	}
 )}, time); 
@@ -87,6 +89,7 @@ chrome.storage.sync.get({
 		start = true;
     		chrome.browserAction.setBadgeText({text});
         	chrome.browserAction.setBadgeBackgroundColor({ color: labelClr});
+		chrome.browserAction.setTitle({title : titolo+text+" views"});  
 		};
 });	
 }
@@ -97,7 +100,8 @@ function on_start() {
     
     text = 'wait';
     chrome.browserAction.setBadgeText({text});
-   
+     
+
     chrome.storage.sync.get({
     favoriteWww: '',
     favoriteKey: '',
@@ -115,7 +119,9 @@ function on_start() {
 	text = response;
     	chrome.browserAction.setBadgeText({text});
 	chrome.browserAction.setBadgeBackgroundColor({ color: labelClr});
+	chrome.browserAction.setTitle({title : titolo+text+" views"});  
     });
 }
 )};
+
 
