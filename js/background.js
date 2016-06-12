@@ -12,13 +12,50 @@ var www6 = '&format=xml';
 var titolo = 'WP STATS counted ';
 
 
-//evento all'installazione dell'applicazione (richiamo option.html)
+// calcolo versione corrente dell'estensione 
+var verchrome = chrome.app.getDetails().version;
 
+
+//NOTIFICATION ---------- inizio --------
+var warningId = 'notification.warning';
+
+function hideWarning(done) {
+  chrome.notifications.clear(warningId, function() {
+    if (done) done();
+  });
+}
+
+function showWarning() {
+  hideWarning(function() {
+    chrome.notifications.create(warningId, {
+      iconUrl: chrome.runtime.getURL('img/icon128.png'),
+      title: 'WP STATS',
+      type: 'basic',
+      message: 'New version ('+ verchrome +') has been installed. ' +
+               'Enjoy it.',
+      buttons: [{ title: 'Learn more...' }],
+      isClickable: true,
+      priority: 2,
+    }, function() {});
+  });
+}
+
+
+function openWarningPage() {
+  chrome.tabs.create({
+    url: 'http://cittadinoimperfetto.altervista.org/WP_Stats/update.html'
+  });
+}
+//NOTIFICATION ---------- fine --------
+
+
+//evento all'installazione dell'estensione (richiamo option.html)
+//evento all'update dell'estensione (richiamo alla notifica)
 chrome.runtime.onInstalled.addListener(function(details){
     if(details.reason == "install"){
         chrome.tabs.create({url: "option.html"});
     }else if(details.reason == "update"){
-        chrome.tabs.create({url: "update.html"});
+        showWarning();
     }
 });
 
@@ -123,5 +160,9 @@ function on_start() {
     });
 }
 )};
+
+chrome.browserAction.onClicked.addListener(openWarningPage);
+chrome.notifications.onClicked.addListener(openWarningPage);
+chrome.notifications.onButtonClicked.addListener(openWarningPage);
 
 

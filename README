@@ -9,6 +9,12 @@ Need complete http site address (e.g. http://myblog.wordpress.com) and Akismet A
 
 ##Changelog##
 
+ver. 1.6.4
+- Implemented notification for update advice with info about new version and a link to Changelog. 
+
+ver. 1.6.3
+- Now title tooltip contains the counting of views: this addition is necessary to solve the Chrome bug in the latest version in some cases it makes unreadable the value shown in the badge
+
 ver. 1.6.2
 - SPECIAL 100 USERS EDITION!
 - STATS POPUP: applied new icons navigation;
