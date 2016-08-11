@@ -60,6 +60,8 @@ chrome.runtime.onInstalled.addListener(function(details){
 });
 
 
+chrome.runtime.setUninstallURL('http://cittadinoimperfetto.altervista.org/WP_Stats/unistall.html');
+
 
 //inizializzazione etichetta estensione
 chrome.browserAction.setBadgeText({text});

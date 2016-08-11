@@ -9,6 +9,9 @@ Need complete http site address (e.g. http://myblog.wordpress.com) and Akismet A
 
 ##Changelog##
 
+ver. 1.6.5
+- Implemented unistall survey. 
+
 ver. 1.6.4
 - Implemented notification for update advice with info about new version and a link to Changelog. 
 
