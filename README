@@ -9,6 +9,9 @@ Need complete http site address (e.g. http://myblog.wordpress.com) and Akismet A
 
 ##Changelog##
 
+ver. 1.6.8
+- Improved Initial Page with new function to retrieve easily the Akismet API code. 
+
 ver. 1.6.5
 - Implemented unistall survey. 
 

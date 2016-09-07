@@ -18,6 +18,12 @@ window.close();
 }
 
 
+function help_options() {
+var newURL = "https://apikey.wordpress.com/";
+        chrome.tabs.create({ url: newURL });
+}
+
+
 //funzione salvataggio opzioni con avvio lettura contatore
 function save_options() {
   var www = document.getElementById('www').value;
@@ -140,5 +146,7 @@ function restore_options() {
 //premendo pulsante 'save' si avvia procedura salvataggio opzioni...
 document.getElementById('save').addEventListener('click',
     save_options);
+document.getElementById('help').addEventListener('click',
+    help_options);
 
 
