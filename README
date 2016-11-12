@@ -9,6 +9,9 @@ Need complete http site address (e.g. http://myblog.wordpress.com) and Akismet A
 
 ##Changelog##
 
+ver. 1.6.9
+- To solve counter label wrong view, it has been implemented a shortcut button in options to easily enable/disable Material Design on Chrome top bar
+
 ver. 1.6.8
 - Improved Initial Page with new function to retrieve easily the Akismet API code. 
 

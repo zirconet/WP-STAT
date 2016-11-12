@@ -24,6 +24,12 @@ var newURL = "https://apikey.wordpress.com/";
 }
 
 
+function material_options() {
+var newURL = "chrome://flags/#top-chrome-md";
+        chrome.tabs.create({ url: newURL });
+}
+
+
 //funzione salvataggio opzioni con avvio lettura contatore
 function save_options() {
   var www = document.getElementById('www').value;
@@ -148,5 +154,7 @@ document.getElementById('save').addEventListener('click',
     save_options);
 document.getElementById('help').addEventListener('click',
     help_options);
+document.getElementById('material').addEventListener('click',
+    material_options);
 
 

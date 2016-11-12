@@ -12,6 +12,12 @@ window.close();
 }
 
 
+function material_options() {
+var newURL = "chrome://flags/#top-chrome-md";
+        chrome.tabs.create({ url: newURL });
+}
+
+
 function save_options() {
   var www = document.getElementById('www').value;
   var key = document.getElementById('key').value;
@@ -99,3 +105,5 @@ document.getElementById('save').addEventListener('click',
     save_options);
 document.getElementById('close').addEventListener('click',
     close_options);
+document.getElementById('material').addEventListener('click',
+    material_options);

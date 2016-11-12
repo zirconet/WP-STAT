@@ -4,6 +4,20 @@
   <title>WP Stats Options</title>
   <style>
     body: { padding: 20px; }
+    .material {
+	padding: 5;
+	border-radius: 10px;
+	border: 1px;
+    	width: 150px;
+    	height: 60px;
+    	background-image: url(img/1material.png);
+    	background-repeat: no-repeat;
+	  }
+    .material:active {transform: translateY(4px); }
+    .material:hover {
+	background-color: #FFFFFF;
+    	background-repeat: no-repeat;
+	transform: translateY(4px); }
   </style>
 </head>
 
@@ -40,7 +54,9 @@
   </br>
   </br>
   </form>
-
+  <div><button class="material" title="Open chrome://flags/#top-chrome-md" id="material"></button>
+</br>
+</br>
   <div id="status"></div>
   <button id="save">Save</button>
   <button id="close">Close</button>
